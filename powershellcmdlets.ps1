@@ -37,11 +37,11 @@ New-AzureRmResourceGroup -Name "mclassSept" -Location "West Europe" -Verbose
 
  Set-AzureRmVMOperatingSystem -Windows -ComputerName "test01" -VM $config 
  
- Set-AzureRmVMOSDisk -Name "testosdisk" -Windows -VM $config -CreateOption FromImage -VhdUri "os.vhdx" `
+ Set-AzureRmVMOSDisk -Name "testosdisk" -Windows -VM $config -CreateOption FromImage  `
  -Caching ReadWrite
  
  Set-AzureRmVMSourceImage -VM $config -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" `
- -Skus "2016-Datacenter " -Version latest
+ -Skus "2016-Datacenter" -Version latest
  
  Add-AzureRmVMNetworkInterface -VM $config -NetworkInterface $nic 
 
