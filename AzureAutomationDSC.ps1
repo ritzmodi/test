@@ -1,7 +1,7 @@
 Login-AzureRmAccount
-Set-AzureRmContext -Subscription 	8e0502bf-56ff-4d96-81e7-11725e8065dd
-$app = New-AzureRmADApplication -DisplayName "ARMtemplateBook10" `
--IdentifierUris "http://ARMtemplateBook10" -ReplyUrls "http://ARMtemplateBook10/callback"
+Set-AzureRmContext -Subscription 	"yourid"
+$app = New-AzureRmADApplication -DisplayName "yourid" `
+-IdentifierUris "http://yourid" -ReplyUrls "http://yourid/callback"
 $app
 $principal = New-AzureRmADServicePrincipal -ApplicationId $app.ApplicationId `
 -Password (ConvertTo-SecureString -String Pa55w0rd -AsPlainText -Force)
@@ -45,7 +45,7 @@ Register-AzureRmAutomationDscNode -AzureVMName test01 -AzureVMResourceGroup 	mcl
 tionName FileConfiguration.localhost -ResourceGroupName DSCResources -AutomationAccountName PullServer
  -AzureVMLocation "West Europe" -Verbose -Debug
 Login-AzureRmAccount
-Set-AzureRmContext -Subscription 8e0502bf-56ff-4d96-81e7-11725e8065dd
+Set-AzureRmContext -Subscription yourid
 Register-AzureRmAutomationDscNode -AzureVMName test01 -AzureVMResourceGroup 	mclassSept -NodeConfigura
 tionName FileConfiguration.localhost -ResourceGroupName DSCResources -AutomationAccountName PullServer
  -AzureVMLocation "West Europe" -Verbose -Debug
