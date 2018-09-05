@@ -1,0 +1,1 @@
+/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:OutDir="$(build.stagingDirectory)"
